@@ -1,13 +1,8 @@
-function changebackgroundcolor() {
-  document.querySelector("#ele1").addEventListener("click", function (pintar) {
-    if (pintar.target.style.backgroundColor == "green") {
-      pintar.target.style.backgroundColor = "yellow";
-    } else if (pintar.target.style.backgroundColor == "yellow") {
-      pintar.target.style.backgroundColor = "green";
-    } else {
-      pintar.target.style.backgroundColor = "green";
-    }
-  });
+const ele = document.querySelector("#ele1");
+ele.addEventListener("click", () => pintar(ele));
+
+pintar = function(ele, color = "yellow") {
+  ele.style.backgroundColor = color;
 }
 
-changebackgroundcolor();
+pintar(ele, "green");
